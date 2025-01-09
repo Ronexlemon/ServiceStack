@@ -3,10 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
+	_"github.com/joho/godotenv/autoload"
+
+	common "github.com/RonexLemon/commons"
 )
 
-const (
-	httpAddr = ":9090"
+var (
+	httpAddr = common.EnvString("HTTP_ADDR",":9090")
 )
 
 func main() {
