@@ -1,3 +1,3 @@
-module github.com/RonexLemon/payments
+module github.com/ronexlemon/payment
 
-go 1.21.3
+go 1.23.4

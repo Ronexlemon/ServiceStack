@@ -1,3 +1,3 @@
-module github.com/RonexLemon/stock
+module github.com/ronexlemon/stock
 
-go 1.21.3
+go 1.23.4

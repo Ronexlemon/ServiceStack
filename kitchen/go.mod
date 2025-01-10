@@ -1,3 +1,3 @@
-module github.com/RonexLemon/kitchen
+module github.com/ronexlemon/kitchen
 
-go 1.21.3
+go 1.23.4
