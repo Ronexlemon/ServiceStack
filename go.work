@@ -6,4 +6,6 @@ use (
 	./kitchen
 	./stock
 	./orders
+	./otherService
+	./gateway_two
 )
