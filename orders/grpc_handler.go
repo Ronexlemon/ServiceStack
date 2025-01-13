@@ -22,6 +22,9 @@ func (h *grpcHandler) CreateOrder(c context.Context,p *pb.CreateOrderRequest) (*
 	log.Printf("New Order Received! Order %v",p)
 	O :=&pb.Order{
 ID: "20",
+CustomerId: p.CustomerId,
+
+
 
 	}
 	return O,nil
