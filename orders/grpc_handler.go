@@ -18,10 +18,11 @@ func NewGRPCHandler(grpcServer *grpc.Server){
 	
 }
 
-func (h *grpcHandler) CreateOrder(context.Context, *pb.CreateOrderRequest) (*pb.Order, error) {
-	log.Println("New Order Received")
+func (h *grpcHandler) CreateOrder(c context.Context,p *pb.CreateOrderRequest) (*pb.Order, error) {
+	log.Printf("New Order Received! Order %v",p)
 	O :=&pb.Order{
 ID: "20",
+
 	}
 	return O,nil
 }
