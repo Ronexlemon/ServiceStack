@@ -25,8 +25,8 @@ func (h *grpcHandler) GetMessage(c context.Context, p *pb.MessageRequest) (*pb.M
 	Response:= &pb.MessageResponse{
 		Response: "Get The response",
 		Request: &pb.MessageRequest{
-			Name: "Ronex Ondimu",
-		Message: "Get the job done alright",
+			Name: p.Name,
+		Message: p.Message,
 
 		},
 		
