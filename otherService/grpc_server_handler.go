@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"log"
 
 	pb "github.com/ronexlemon/otherservice/api"
 	"google.golang.org/grpc"
@@ -18,8 +19,19 @@ func NewGRPCHandler(grpcServer *grpc.Server){
 	
 	
 }
-func (h *grpcHandler) GetMessage(context.Context, *pb.MessageRequest) (*pb.MessageResponse, error) {
-	return nil, nil
+func (h *grpcHandler) GetMessage(c context.Context, p *pb.MessageRequest) (*pb.MessageResponse, error) {
+	log.Printf("Get message %v",p)
+	
+	Response:= &pb.MessageResponse{
+		Response: "Get The response",
+		Request: &pb.MessageRequest{
+			Name: "Ronex Ondimu",
+		Message: "Get the job done alright",
+
+		},
+		
+	}
+	return Response, nil
 }
 func (h *grpcHandler) GetMessageLists(*pb.MessageKey, grpc.ServerStreamingServer[pb.Keys]) error {
 	return nil
