@@ -1,0 +1,31 @@
+syntax ="proto3";
+option go_package = "github.com/ronexlemon/otherservice/api";
+
+package api;
+
+message MessageRequest{
+    string name = 1;
+    string message = 2;    
+}
+message MessageResponse{
+     MessageRequest request=1;
+    string response = 2;
+    }
+message MessageKey{
+    string key = 1;
+    string message=2;
+}
+message Keys{
+    repeated MessageKey key = 1;
+}
+service RouteGuide{
+    //A Simple RPC
+    rpc GetMessage(MessageRequest) returns (MessageResponse){}
+    //A server-side-streaming RPC
+    rpc GetMessageLists(MessageKey)  returns (stream Keys){}
+    //A client-streaming RPC
+    rpc AddMessage(stream MessageRequest) returns (MessageResponse){}
+    //A bidirectional-streaming RPC
+    rpc AddMessageLists(stream MessageKey) returns (stream Keys){}
+
+}
