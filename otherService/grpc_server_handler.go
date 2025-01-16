@@ -33,7 +33,13 @@ func (h *grpcHandler) GetMessage(c context.Context, p *pb.MessageRequest) (*pb.M
 	}
 	return Response, nil
 }
-func (h *grpcHandler) GetMessageLists(*pb.MessageKey, grpc.ServerStreamingServer[pb.Keys]) error {
+func (h *grpcHandler) GetMessageLists(key *pb.MessageKey,server grpc.ServerStreamingServer[pb.Keys]) error {
+	//get the message
+	//return the message
+	log.Printf("Get message list %v",key)
+	
+	
+
 	return nil
 }
 func (h *grpcHandler) AddMessage(grpc.ClientStreamingServer[pb.MessageRequest, pb.MessageResponse]) error {
